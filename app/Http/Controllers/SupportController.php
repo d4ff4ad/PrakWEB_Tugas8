@@ -10,19 +10,25 @@ class SupportController extends Controller
             [
                 'judul' => 'Cara Aktivasi Garansi',
                 'deskripsi' => 'Panduan lengkap untuk aktivasi garansi produk elektronik Anda.',
-                'icon' => 'bi-shield-check'
+                
             ],
             [
                 'judul' => 'Masalah Pengiriman',
                 'deskripsi' => 'Solusi jika terjadi kendala dalam pengiriman barang.',
-                'icon' => 'bi-truck'
+                
             ],
             [
                 'judul' => 'Pengembalian Barang',
                 'deskripsi' => 'Prosedur retur barang jika menemukan kerusakan.',
-                'icon' => 'bi-box-arrow-left'
+                
             ],
         ];
-        return view('support', compact('supports'));
+
+        $icon = [
+            'icon1' => 'bi-shield-check',
+            'icon2' => 'bi-truck',
+            'icon3' => 'bi-box-arrow-left',
+        ];
+        return view('support', compact('supports', 'icon'));
     }
 }

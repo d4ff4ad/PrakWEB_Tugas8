@@ -163,7 +163,7 @@
                 <span class="badge-new">{{ $item['label'] }}</span>
                 <h5 class="card-title">{{ $item['nama'] }}</h5>
                 <p class="card-text">{{ $item['deskripsi'] }}</p>
-                <img src="{{ $item['gambar'] }}" alt="{{ $item['nama'] }}">
+                <img src="{{ $gambar[$item['gambar']] }}" alt="{{ $item['nama'] }}">
                 <div class="mt-auto">
                     <button class="btn btn-buy">Beli</button>
                 </div>

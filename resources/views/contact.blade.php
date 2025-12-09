@@ -264,12 +264,11 @@
         <div class="row align-items-center">
             <div class="col-md-5 mb-4 mb-md-0">
                 <h3 class="fw-bold mb-3">Kantor Pusat</h3>
-                <p class="text-secondary mb-1">{{ $alamat }}</p>
-                <p class="text-secondary mb-1">{{ $email }}</p>
-                <p class="text-secondary mb-4">{{ $phone }}</p>
+                <p class="text-secondary mb-1">{{ $contact['alamat'] }}</p>
+                <p class="text-secondary mb-1">{{ $contact['email'] }}</p>
+                <p class="text-secondary mb-4">{{ $contact['phone'] }}</p>
                 
-                <a href="https://www.google.com/maps/place/Antah+Berantah+Garden/data=!4m7!3m6!1s0x2e6991abd1fa6f57:0xa885c49a078b1af5!8m2!3d-6.
-                3296171!4d107.0487341!16s%2Fg%2F11gbkryv0c!19sChIJV2_60auRaS4R9RqLB5rEhag?authuser=0&hl=id&rclk=1" class="btn btn-outline-dark rounded-pill px-4">Lihat di Peta</a>
+                <a href="{{ $peta['peta'] }}" class="btn btn-outline-dark rounded-pill px-4">Lihat di Peta</a>
             </div>
             <div class="col-md-7">
                 <div style="width: 100%; height: 300px; background-color: #eee; border-radius: 20px; overflow: hidden; position: relative;">

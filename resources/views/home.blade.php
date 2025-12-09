@@ -103,8 +103,8 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <h1>{{ $product }}</h1>
-            <p>{{ $description }}</p>
+            <h1>{{ $data['product'] }}</h1>
+            <p>{{ $data['description'] }}</p>
 
             <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner mt-4">
@@ -135,19 +135,19 @@
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="apple-card">
-                        <h5>MacBook Pro</h5>
+                        <h5>{{ $produk['produk1'] }}</h5>
                         <img src="https://www.filme.fr/cdn/shop/products/location-apple-macbook-pro-16-intel-a-paris-et-montreuil-chez-filme.jpg?v=1705010904" width="260">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="apple-card">
-                        <h5>Apple Watch</h5>
+                        <h5>{{ $produk['produk2'] }}</h5>
                         <img src="https://www.apple.com/id/watch/images/meta/apple-watch__ywfuk5wnf1u2_og.png" width="230">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="apple-card bg-dark text-white">
-                        <h5>iPad Pro</h5>
+                        <h5>{{ $produk['produk3'] }}</h5>
                         <img src="https://macstore.id/wp-content/uploads/2024/01/ipad-pro-finish-select-202212-12-9inch-space-gray-wifi_AV1.jpeg" width="230">
                     </div>
                 </div>

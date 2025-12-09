@@ -289,10 +289,10 @@
                     <a href="#" class="arrow-link mt-3 mt-md-0">Kelola <i class="bi bi-chevron-right small"></i></a>
                 </div>
             </div>
-            @foreach ($supports as $support)
+            @foreach ($supports as $key => $support)
             <div class="col-md-4">
                 <div class="topic-card">
-                    
+                    <i class="bi {{ $icon['icon' . ($key + 1)] }} fs-3 text-primary mb-3 d-block"></i>
                     <h5 class="topic-title">{{ $support['judul'] }}</h5>
                     <p class="topic-desc">{{ $support['deskripsi'] }}</p>
                     <a href="#" class="arrow-link">Mulai pemulihan <i class="bi bi-chevron-right small"></i></a>

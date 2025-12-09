@@ -12,6 +12,14 @@ class AboutController extends Controller
             'CTO' => 'Jane Smith',
             'COO' => 'Bob Johnson',
         ];
-        return view('about',$about);
+
+        $jabatan = [
+            'CEO' => 'Chief Executive Officer',
+            'CTO' => 'Chief Technology Officer',
+            'COO' => 'Chief Operating Officer',
+        ];
+
+        
+        return view('about', compact('about', 'jabatan'));
     }
 }

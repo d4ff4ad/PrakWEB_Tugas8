@@ -240,20 +240,20 @@
             
             <div class="col-md-3 col-6 text-center team-card">
                 <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop" class="img-fluid team-img" alt="CEO">
-                <h5 class="fw-bold mb-1">{{ $CEO }}</h5>
-                <small class="text-secondary">Chief Executive Officer</small>
+                <h5 class="fw-bold mb-1">{{ $about['CEO'] }}</h5>
+                <small class="text-secondary">{{ $jabatan['CEO'] }}</small>
             </div>
 
             <div class="col-md-3 col-6 text-center team-card">
                 <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop" class="img-fluid team-img" alt="Designer">
-                <h5 class="fw-bold mb-1">{{ $CTO }}</h5>
-                <small class="text-secondary">VP of Design</small>
+                <h5 class="fw-bold mb-1">{{ $about['CTO'] }}</h5>
+                <small class="text-secondary">{{ $jabatan['CTO'] }}</small>
             </div>
 
             <div class="col-md-3 col-6 text-center team-card">
                 <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1000&auto=format&fit=crop" class="img-fluid team-img" alt="Tech">
-                <h5 class="fw-bold mb-1">{{ $COO }}</h5>
-                <small class="text-secondary">VP of Technology</small>
+                <h5 class="fw-bold mb-1">{{ $about['COO'] }}</h5>
+                <small class="text-secondary">{{ $jabatan['COO'] }}</small>
             </div>
 
         </div>

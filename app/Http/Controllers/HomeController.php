@@ -10,7 +10,14 @@ class HomeController extends Controller
             'product' => 'iPhone 18 Pro',
             'description' => 'Titanium. Begitu kuat. Begitu ringan.',
         ];
-        return view('home', $data);
+
+        $produk = [
+            'produk1' => 'MacBook Pro',
+            'produk2' => 'Apple Watch',
+            'produk3' => 'iPad Pro',          
+
+        ];
+        return view('home', compact('data', 'produk'));
 
     }
 
