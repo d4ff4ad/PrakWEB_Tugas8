@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Store - Danish</title>
+    <title>iPhone Products - Danish</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -58,6 +58,8 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-card:hover {
@@ -72,6 +74,7 @@
             margin-bottom: 30px;
             filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
             transition: 0.4s;
+            width: 100%;
         }
 
         .product-card:hover img {
@@ -87,8 +90,15 @@
         .card-text {
             color: #86868b;
             font-size: 0.95rem;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
             min-height: 40px; 
+        }
+        
+        .card-price {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--apple-text);
+            margin-bottom: 20px;
         }
 
         /* Tombol Beli - Pill Shape */
@@ -138,11 +148,11 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav gap-3">
                 <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
-                <li class="nav-item"><a class="nav-link active" href="{{ route('store') }}">Store</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('store') }}">Store</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('support') }}">Support</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('product') }}">Product</a></li>
+                <li class="nav-item"><a class="nav-link active " href="{{ route('product') }}">Product</a></li>
             </ul>
         </div>
     </div>
@@ -150,21 +160,33 @@
 
 <section class="store-header text-center">
     <div class="container fade-in">
-        <h2 class="store-title">Store.</h2>
-        <p class="text-secondary fs-5">Cara terbaik untuk membeli produk yang Anda cintai.</p>
+        <h2 class="store-title">iPhone.</h2>
+        <p class="text-secondary fs-5">Didesain untuk dicintai.</p>
+        <a href="{{ route('addproduct') }}" class="btn btn-buy mt-3 px-4 py-2">Tambah iPhone</a>
     </div>
 </section>
 
 <div class="container pb-5">
     <div class="row gy-4">
 
-        @foreach ($produk as $item)
+        @foreach ($iphones as $iphone)
         <div class="col-lg-4 col-md-6">
             <div class="product-card">
-                <span class="badge-new">{{ $item['label'] }}</span>
-                <h5 class="card-title">{{ $item['nama'] }}</h5>
-                <p class="card-text">{{ $item['deskripsi'] }}</p>
-                <img src="{{ $gambar[$item['gambar']] }}" alt="{{ $item['nama'] }}">
+                <span class="badge-new">{{ $iphone->color ?? 'New' }}</span>
+                <h5 class="card-title">{{ $iphone->model }}</h5>
+                <p class="card-text">{{ $iphone->description }}</p>
+                <p class="card-price">Rp {{ number_format($iphone->price, 0, ',', '.') }}</p>
+                
+                @if($iphone->image)
+                    @if (filter_var($iphone->image, FILTER_VALIDATE_URL))
+                        <img src="{{ $iphone->image }}" alt="{{ $iphone->model }}">
+                    @else
+                        <img src="{{ asset($iphone->image) }}" alt="{{ $iphone->model }}">
+                    @endif
+                @else
+                    <img src="https://placehold.co/300x300?text=No+Image" alt="No Image">
+                @endif
+                
                 <div class="mt-auto">
                     <button class="btn btn-buy">Beli</button>
                 </div>
@@ -177,7 +199,7 @@
 
 <footer class="text-center py-4 mt-5">
     <div class="container">
-        <p class="mb-0">&copy; 2025 Danish Store. <span class="text-secondary">You Allright.</span></p>
+        <p class="mb-0">&copy; 2025 Danish Store. <span class="text-secondary">All rights reserved.</span></p>
     </div>
 </footer>
 

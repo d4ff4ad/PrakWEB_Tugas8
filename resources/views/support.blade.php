@@ -183,6 +183,7 @@
                 <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
                 <li class="nav-item"><a class="nav-link active" href="{{ route('support') }}">Support</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('product') }}">Product</a></li>A
             </ul>
         </div>
     </div>

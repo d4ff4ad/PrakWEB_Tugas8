@@ -6,6 +6,7 @@ use App\Http\Controllers\StoreController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SupportController;
+use App\Http\Controllers\IphoneController;
 
 Route::get('/', [DashboardController::class, 'index']);
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -13,3 +14,9 @@ Route::get('/store', [StoreController::class, 'index'])->name('store');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/support', [SupportController::class, 'index'])->name('support');
+Route::get('/product', [IphoneController::class, 'index'])->name('product');
+Route::get('/product/create', [IphoneController::class, 'create'])->name('addproduct');
+Route::post('/product', [IphoneController::class, 'store'])->name('product.store');
+
+
+
